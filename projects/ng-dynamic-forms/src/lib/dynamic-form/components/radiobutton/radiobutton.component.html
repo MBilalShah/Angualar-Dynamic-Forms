@@ -1,0 +1,10 @@
+<div class="form-group" [ngClass]="field.classes" [formGroup]="group">
+    <label for="">{{field.label}}</label>
+    <div *ngFor="let option of field.options" class="list-inline-item">
+        <label [for]="option.name" class="d-block position-relative m-0">{{option.label}}
+            <input type="radio" [formControlName]="field.name" class="class" [name]="field.name" [id]="field.name"
+                [value]="option.name">
+        </label>
+    </div>
+
+</div>

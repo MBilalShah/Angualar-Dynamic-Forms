@@ -1,0 +1,23 @@
+<div class="form">
+  <div style="text-align:center">
+    <h1>
+      Dynamic Form
+    </h1>
+  </div>
+
+  <div class="pull-right custom-tooltip-hov edit-block mt-3">
+    <a href="javascript:void(0)" data-original-title="Edit" tooltip="Edit" (click)="enableForm(enableflag)">
+      <i class="icon-pencil"></i>
+    </a>
+  </div>
+  <div class="card personal-info-block w-100 mb-0 mt-0" style="padding:20px">
+    <dynamic-form [fields]="fieldConfig" (submit)="submit($event)">
+    </dynamic-form>
+
+  </div>
+  <div class="margin-top">
+    {{ _form?.value | json }}
+  </div>
+</div>
+
+<!-- {{fieldConfig | json}} -->

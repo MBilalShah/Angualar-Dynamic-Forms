@@ -1,0 +1,4 @@
+<p *ngIf="field.values">{{field.values}}</p>
+<ng-container *ngFor="let field of field.children" dynamicField [field]="field" [group]="group" [ngStyle]="field.style">
+
+</ng-container>

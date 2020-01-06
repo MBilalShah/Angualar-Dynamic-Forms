@@ -1,21 +1,24 @@
-import { Component, ViewChild } from '@angular/core';
-import { DynamicFormComponent } from 'projects/ng-dynamic-forms/src/public-api';
-import { FormGroup, Validators } from '@angular/forms';
-import { RadioButtonClass } from 'projects/ng-dynamic-forms/src/lib/dynamic-form/models/RadioButtonClass.class';
-import { FieldConfig } from 'projects/ng-dynamic-forms/src/lib/dynamic-form/models/fieldConfig.model';
-import { DivClass } from 'projects/ng-dynamic-forms/src/lib/dynamic-form/models/DivClass.class';
-import { InputClass } from 'projects/ng-dynamic-forms/src/lib/dynamic-form/models/InputClass.class';
-import { ButtonClass } from 'projects/ng-dynamic-forms/src/lib/dynamic-form/models/ButtonClass.class';
-import { InputTypes } from 'projects/ng-dynamic-forms/src/lib/dynamic-form/constants/InputTypes.enum';
-import { ButtonTypes } from 'projects/ng-dynamic-forms/src/lib/dynamic-form/constants/ButtonTypes.enum';
-
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { FieldConfig } from '../models/fieldConfig.model';
+import { DivClass } from '../models/DivClass.class';
+import { InputClass } from '../models/InputClass.class';
+import { InputTypes } from '../constants/InputTypes.enum';
+import { Validators, FormGroup } from '@angular/forms';
+import { ButtonClass } from '../models/ButtonClass.class';
+import { ButtonTypes } from '../constants/ButtonTypes.enum';
+import { ComponentTypes } from '../constants/ComponentTypes.enum';
+import { RadioButtonClass } from '../models/RadioButtonClass.class';
+import { Button } from 'protractor';
+import { DynamicFormComponent } from './../components/dynamic-form/dynamic-form.component'
+import { Validator } from '../models/validator.model';
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-dynamic-form',
+  templateUrl: './dynamic-form.component.html',
+  styleUrls: ['./dynamic-form.component.scss']
 })
-export class AppComponent {
-  title = 'DynamicForms';
+export class DynamicFormComponentDemo implements OnInit {
+
+  constructor() { }
   @ViewChild(DynamicFormComponent,{static:false}) form: DynamicFormComponent;
   ngOnInit() {
   }
@@ -87,5 +90,5 @@ export class AppComponent {
     this._form.disabled ? this._form.enable() : this._form.disable()
 
   }
-}
 
+}

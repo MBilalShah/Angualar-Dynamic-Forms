@@ -120,6 +120,41 @@
           }
         }
       }
+    },
+    "ngDynamicForms": {
+      "projectType": "library",
+      "root": "projects/ng-dynamic-forms",
+      "sourceRoot": "projects/ng-dynamic-forms/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ng-dynamic-forms/tsconfig.lib.json",
+            "project": "projects/ng-dynamic-forms/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-dynamic-forms/src/test.ts",
+            "tsConfig": "projects/ng-dynamic-forms/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-dynamic-forms/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-dynamic-forms/tsconfig.lib.json",
+              "projects/ng-dynamic-forms/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "DynamicForms"
 }
